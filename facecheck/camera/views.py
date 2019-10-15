@@ -7,11 +7,11 @@ import pandas as pd
 
 # Create your views here.
 def index(request):
-    video_capture = cv2.VideoCapture(0)
     face_locations = []
     face_encodings = []
     face_encodings_df = pd.DataFrame(columns=["face_encodings"])
     if request.method == "POST":
+        video_capture = cv2.VideoCapture(0)
         value = request.POST['value']
         while True:
             numbers = value
@@ -35,13 +35,13 @@ def index(request):
                     face_locations = face_recognition.face_locations(rgb_small_frame)
                     face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
                     if len(face_encodings) > 0:
-                        filename = "Daniel_" + str(ext)
+                        filename = "Harris_" + str(ext)
                         face_encodings = face_encodings[0]
                         face_encodings_map = {"face_encodings": face_encodings}
                         face_encodings_df = face_encodings_df.append(face_encodings_map, ignore_index=True)
                         print(filename)
                         print(ext)
-                        cv2.imwrite("F:\django\images\%s.jpg" % filename, rgb_small_frame)
+                        cv2.imwrite(".\\images_step-1\\Harris\\%s.jpg" % filename, rgb_small_frame)
                         ext = ext + 1
                         count = count + 1
 
@@ -55,7 +55,7 @@ def index(request):
 
         # Release handle to the webcam
         face_encodings_df = face_encodings_df["face_encodings"].values.tolist()
-        np.savetxt("F:\django\images\Daniel_face_features.csv", face_encodings_df)
+        np.savetxt(".\\images_step-1\\Harris\\Harris_face_features.csv", face_encodings_df)
         video_capture.release()
         cv2.destroyAllWindows()
 
