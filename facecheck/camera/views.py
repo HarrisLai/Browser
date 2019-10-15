@@ -4,15 +4,13 @@ import face_recognition
 import cv2
 import pandas as pd
 
-video_capture = cv2.VideoCapture(0)
 
-
-
-face_locations = []
-face_encodings = []
-face_encodings_df = pd.DataFrame(columns=["face_encodings"])
 # Create your views here.
 def index(request):
+    video_capture = cv2.VideoCapture(0)
+    face_locations = []
+    face_encodings = []
+    face_encodings_df = pd.DataFrame(columns=["face_encodings"])
     if request.method == "POST":
         value = request.POST['value']
         while True:
