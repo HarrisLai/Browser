@@ -1,8 +1,8 @@
 from django.urls import path
 from .import views
-from django.contrib import admin
+from .import catch
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path(r'^admin/', admin.site.urls),
+    path('camera', catch.camera, name='camera'),
+    path('', views.index, name='index')
 ]

@@ -2,20 +2,67 @@
 {% load staticfiles %}
 <html lang="en">
     <head>
-        <title>AIOT邊緣智慧監控系統</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <meta charset="utf-8">
+        <title>網站草稿</title>
+        <meta name="app-name" content="website_viewer">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://static.canva.com/web/cef464c7cdfc75591f88.css" rel="stylesheet">
+        <link href="https://static.canva.com/web/396c7c3eb262b54a1ec3.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;display=swap" rel="stylesheet">
+        <link href="https://static.canva.com/web/c64ac32625eeec3896a5b32103b56b25.runtime.js" rel="preload" as="script" crossorigin="anonymous">
+        <link href="https://static.canva.com/web/b418189ff618121686c4.js" rel="preload" as="script" crossorigin="anonymous">
+        <link href="https://static.canva.com/web/bad31e70bbde8e81d374.js" rel="preload" as="script" crossorigin="anonymous">
+        <link href="https://static.canva.com/web/c2859b5616179e174213.js" rel="preload" as="script" crossorigin="anonymous">
+        <link href="https://static.canva.com/web/54d80affe15ca954cec1a0bd20ea77d9.js" rel="preload" as="script" crossorigin="anonymous">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta property="fb:app_id" content="525265914179580">
+        <meta property="og:site_name" content="Canva">
+        <meta property="og:title" content="網站草稿">
+        <meta property="og:image" content="https://document-export.canva.com/DADomY8puTU/12/preview/0001-3676674025.png">
+        <meta property="og:image:secure_url" content="https://document-export.canva.com/DADomY8puTU/12/preview/0001-3676674025.png">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="493">
+        <meta property="og:url" content="https://www.canva.com">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@canva">
+        <meta name="twitter:creator" content="@canva">
+        <meta name="twitter:title" content="網站草稿">
+        <meta name="twitter:description" content="使用 Canva 設計的超棒 Website，設計者：姚宗祺。">
+        <meta name="description" content="使用 Canva 設計的超棒 Website，設計者：姚宗祺。">
+        <meta property="og:description" content="使用 Canva 設計的超棒 Website，設計者：姚宗祺。">
+        <link rel="shortcut icon" href="https://static.canva.com/static/images/favicon.ico">
+        <link rel="icon" href="https://static.canva.com/static/images/android-192x192.png" sizes="192x192">
+        <link rel="apple-touch-icon" href="https://static.canva.com/static/images/apple-touch-120x120.png">
+        <link rel="apple-touch-icon" href="https://static.canva.com/static/images/apple-touch-152x152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="https://static.canva.com/static/images/apple-touch-167x167.png" sizes="167x167">
+        <link rel="apple-touch-icon" href="https://static.canva.com/static/images/apple-touch-180x180.png" sizes="180x180">
+        <script type="text/javascript" src="https://js.appboycdn.com/web-sdk/2.4/appboy.core.min.js" async=""></script>
+        <script type="text/javascript" async="" src="//bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://sjs.bizographics.com/insight.min.js"></script>
+        <script type="text/javascript" async="" src="https://www.google-analytics.com/gtm/js?id=GTM-NKZQLGP&amp;cid=251177866.1571977577"></script>
+        <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script>
+        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+        <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TZPTKRR&amp;l=dataLayer"></script>
+        <script type="text/javascript" async="" src="https://cdn.segment.com/analytics.js/v1/MQh0Jm5dRE/analytics.min.js"></script>
+        <script type="application/javascript">
+            function initSentry()
+            {Sentry.init({"dsn":"https:\u002F\u002F92d991ccc61145a0acad8e5fc7c0d911@sentry.io\u002F1766607","release":"17f3b02f62a7bf964bd12a38c94d7824bf8900c5","environment":"prod"});}
+        </script>
+        <script src="https://browser.sentry-cdn.com/5.7.1/bundle.min.js" crossorigin="anonymous" onload="initSentry()"></script>
+        <style type="text/css"></style>
+        <link rel="stylesheet" href="https://font-public.canva.com/_fb/s/293624790ddd83f31926d8f70958e8ea.css" id="fallback_fb">
     </head>
+
     <body>
         <div class="page-header">
-            <h1><a href="/blog">AIOT邊緣智慧監控系統</a></h1>
+            <h1><a href="">THE THIRD EYE</a></h1>
         </div>
-        <form method="post" name="form">
+        <form action="/camera" method="post">
             {% csrf_token %}
-            請輸入擷取特徵點相片數量：<input type="number" min="1" max="20" name="value">
-            <button type="submit">確定</button>
-            <button type="reset">取消</button>
+            請輸入名稱:<input type="text" name="name"><br>
+             <button type="submit">確定</button>
+             <button type="reset" >取消</button>
         </form>
+
     </body>
 </html>
