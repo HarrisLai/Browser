@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-    <head>
-        <title>AIOT邊緣智慧監控系統</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/camera.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="">THE THIRD EYE</a></h1>
-        </div>
-        <form method="get">
-            {% csrf_token %}
-            請輸入擷取特徵點相片數量：<input type="number" min="1" max="20" name="value"><br>
-            <button type="submit">確定</button>
-            <button type="reset" onclick="history.back()">取消</button>
-        </form>
+{% extends "internet/index.html" %}
+{% block content %}
 
-    </body>
-</html>
+<form action="\test" method="post" align="center">
+    {% csrf_token %}
+    <p align="center"><font color="white">請輸入擷取特徵點相片數量：</font><input type="number" min="1" max="20" name="value"><br>
+        <button type="submit">確定</button>
+        <button type="reset">取消</button></p>
+</form>
+{% endblock %}
