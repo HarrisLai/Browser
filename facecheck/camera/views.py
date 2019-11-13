@@ -9,6 +9,7 @@ import imutils
 from . import fr_align, facealigner_fr, fcong_fr
 from .facealigner_fr import FaceAligner_fr
 def index(request):
+    video = cv2.VideoCapture(0)
     return render(request,'internet/index.html',locals())
 def all(request):
     return render(request, 'internet/all.html', locals())
@@ -82,7 +83,7 @@ def camera1(request):
     return render(request, 'internet/test.html', locals())
 
 def only(request):
-
+    title = "上"
     return render(request, 'internet/only.html', locals())
 hit = 0
 

@@ -10,16 +10,28 @@
     </head>
 
     <body>
-        <div class="index">
-            <h1 align="center"><a href="http://site-2031560-4364-3167.mystrikingly.com/" >THE THIRD EYE</a></h1>
-            {% block content %}
-            <form action="\camera" method="post" align="center">
-                {% csrf_token %}
-                <font color="white">請輸入名稱:</font><input type="text" name="name"><br>
-                <input type="submit" value="確定" class="btn show-new-item">
-                <input type="reset" value="取消" class="btn show-new-item">
-            </form>
-            {% endblock %}
+        <div id="header" class="container">
+		    <div id="logo">
+			    <h1 align="center"><a href="http://site-2031560-4364-3167.mystrikingly.com/" >THE THIRD EYE</a></h1>
+		    </div>
+        </div>
+        <div id="header-featured">
+            <div id="banner-wrapper">
+                <div id="banner" class="container">
+                    {% block content %}
+                    <form action="\camera" method="post" align="center">
+                        {% csrf_token %}
+                        <font color="white">請輸入名稱:</font><input type="text" name="name"><br>
+                        <input type="submit" value="確定" >
+                        <input type="reset" value="取消" >
+                    </form>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div id="featured" class="extra2 margin-btm container">
+
+
 
         </div>
 
