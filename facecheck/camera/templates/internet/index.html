@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>AIOT邊緣智慧監控系統</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+        <link href="static/css/default.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="static/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
     </head>
 
     <body>
-        <style>
-        body{
-        margin:0px;
-        padding:0px;
-        background:#fff url(https://i.imgur.com/x7UZxMU.jpg) center center fixed no-repeat;
-        background-size: cover;
-        }
-        </style>
-        <p align="center"><img src="https://i.imgur.com/RZSuFsc.png" width="100" height="55"></p>
-        <div class="page-header" align="center">
-            <h1><a href="http://site-2031560-4364-3167.mystrikingly.com/" style="color:white;">THE THIRD EYE</a></h1>
+        <div class="index">
+            <h1 align="center"><a href="http://site-2031560-4364-3167.mystrikingly.com/" >THE THIRD EYE</a></h1>
+            {% block content %}
+            <form action="\camera" method="post" align="center">
+                {% csrf_token %}
+                <font color="white">請輸入名稱:</font><input type="text" name="name"><br>
+                <input type="submit" value="確定" class="btn show-new-item">
+                <input type="reset" value="取消" class="btn show-new-item">
+            </form>
+            {% endblock %}
+
         </div>
-        {% block content %}
-        <form action="\camera" method="post" align="center">
-            {% csrf_token %}
-            <font color="white">請輸入名稱:</font><input type="text" name="name"><br>
-                <input type="submit" value="確定">
-                <input type="reset" value="取消">
-        {% endblock %}
-        </form>
 
     </body>
 </html>

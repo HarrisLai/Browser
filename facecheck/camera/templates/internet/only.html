@@ -1,0 +1,10 @@
+{% extends "internet/index.html" %}
+{% block content %}
+<form action="\test2" method="POST">
+    {% csrf_token %}
+    請依據指示完成5張不同的臉部角度拍攝：
+    <button type="submit">拍攝</button>
+    <p align="center"><img src="static/images/top.jpg"></p>
+    <p align="center">{{ title }}</p>
+</form>
+{% endblock %}

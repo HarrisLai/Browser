@@ -1,0 +1,39 @@
+{% extends "internet/index.html" %}
+{% block content %}
+{% if title == "下" %}
+<form action="\test2" method="POST">
+    {% csrf_token %}
+    請依據指示完成5張不同的臉部角度拍攝：
+    <button type="submit">拍攝</button>
+    <p align="center"><img src="static/images/down.jpg"></p>
+    <p align="center">{{ title }}</p>
+</form>
+{% elif title == "左" %}
+<form action="\test2" method="POST">
+    {% csrf_token %}
+    請依據指示完成5張不同的臉部角度拍攝：
+    <button type="submit">拍攝</button>
+    <p align="center"><img src="static/images/left.jpg"></p>
+    <p align="center">{{ title }}</p>
+</form>
+{% elif title == "右" %}
+<form action="\test2" method="POST">
+    {% csrf_token %}
+    請依據指示完成5張不同的臉部角度拍攝：
+    <button type="submit">拍攝</button>
+    <p align="center"><img src="static/images/right.jpg"></p>
+    <p align="center">{{ title }}</p>
+</form>
+{% elif title == "中" %}
+<form action="\test2" method="POST">
+    {% csrf_token %}
+    請依據指示完成5張不同的臉部角度拍攝：
+    <button type="submit">拍攝</button>
+    <p align="center"><img src="static/images/mid.jpg"></p>
+    <p align="center">{{ title }}</p>
+</form>
+{% else %}
+    <p align="center">{{ title }}</p>
+{% endif %}
+
+{% endblock %}

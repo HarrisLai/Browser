@@ -1,10 +1,8 @@
 {% extends "internet/index.html" %}
 {% block content %}
-
-<form action="\test" method="post" align="center">
-    {% csrf_token %}
-    <p align="center"><font color="white">請輸入擷取特徵點相片數量：</font><input type="number" min="1" max="20" name="value"><br>
-        <button type="submit">確定</button>
-        <button type="reset">取消</button></p>
-</form>
+<ul class="nav">
+    <li><a href="\all">臉部校正(無)</a></li>
+    <li><a href="\only">臉部校正(5點)</a></li>
+    <li><a href="\test3">臉部校正(68點)</a></li>
+</ul>
 {% endblock %}
